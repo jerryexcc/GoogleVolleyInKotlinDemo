@@ -16,12 +16,13 @@ import com.android.volley.toolbox.Volley
 * P.S 記得要在Manifest內加<uses-permission>
 * */
 class MainActivity : AppCompatActivity() {
-    //初始化 Volley佇列
-    private val requestQueue = Volley.newRequestQueue(this@MainActivity)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //初始化 Volley佇列
+        val requestQueue = Volley.newRequestQueue(this@MainActivity)
         //宣告請求 參數: 1.使用GET請求 2.網址(字串即可 無需轉成URL) 3.請求成功後做的事 4.請求失敗時候做的事
         val stringRequest = StringRequest(
             Request.Method.GET,
